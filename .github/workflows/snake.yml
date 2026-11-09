@@ -8,6 +8,10 @@ on:
     branches:
     - main
 
+# Fuerza de manera global que todas las acciones utilicen Node 24 de forma nativa
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   generate:
     permissions: 
@@ -16,6 +20,10 @@ jobs:
     timeout-minutes: 5
     
     steps:
+      # Soluciona el error 128: Inicializa y descarga tu repositorio en el entorno virtual
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: generate-snake-game-from-github-contribution-grid
         uses: Platane/snk/svg-only@v3
         with:
@@ -24,7 +32,6 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
           
-      # REEMPLAZO: Usamos la acción oficial de GitHub para subir archivos directamente
       - name: push github-contribution-grid-snake.svg to the output branch
         uses: actions/upload-artifact@v4
         with:
@@ -37,6 +44,10 @@ jobs:
       contents: write
     runs-on: ubuntu-24.04
     steps:
+      # También necesitamos inicializar el repositorio en este bloque secundario
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
