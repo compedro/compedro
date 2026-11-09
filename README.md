@@ -13,3 +13,11 @@ Utilizo este perfil para documentar mi aprendizaje, prácticas y ejercicios rela
 ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=flat&logo=intellijidea&logoColor=white)
 ![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=flat&logo=androidstudio&logoColor=white)
 
+## 🕹️ Mi Actividad en GitHub
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://githubusercontent.com" />
+  <source media="(prefers-color-scheme: light)" srcset="https://githubusercontent.com" />
+  <img alt="GitHub Snake" src="https://githubusercontent.com" />
+</picture>
+
+---
